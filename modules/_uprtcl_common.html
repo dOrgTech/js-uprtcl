@@ -1,0 +1,1347 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@uprtcl/common | js-uprtcl</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">js-uprtcl</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_uprtcl_common.html">@uprtcl/common</a>
+				</li>
+			</ul>
+			<h1>Module @uprtcl/common</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<a href="#uprtclcommon" id="uprtclcommon" style="color: inherit; text-decoration: none;">
+						<h1>@uprtcl/common</h1>
+					</a>
+					<blockquote>
+						<p>_Prtcl resources: <a href="https://github.com/uprtcl/spec/wiki">Overview</a>, <a href="https://github.com/uprtcl/spec">Spec</a>, <a href="https://github.com/uprtcl/js-uprtcl/wiki">Dev guide</a>, <a href="https://uprtcl.github.io/js-uprtcl/">API reference</a>
+						/)</p>
+					</blockquote>
+					<p>This is a collection of common Cortex modules, developed as the starting point of many applications:</p>
+					<ul>
+						<li>Entities reducer: redux module to hold any kind of content addressable object</li>
+						<li>Access Control: generic access control</li>
+						<li>Draft: generic providers to store drafts for any kind of content</li>
+						<li><strong>Common patterns</strong> for entities that are hashed, signed...</li>
+					</ul>
+					<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+						<h2>Dependencies</h2>
+					</a>
+					<p>This module depends on <code>@uprtcl/micro-orchestrator</code>, <code>@uprtcl/cortex</code> and <code>@uprtcl/connections</code>.</p>
+					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+						<h2>Install</h2>
+					</a>
+					<pre><code class="language-bash">npm install @uprtcl/common</code></pre>
+					<a href="#_prtcl-module-usage" id="_prtcl-module-usage" style="color: inherit; text-decoration: none;">
+						<h2>_Prtcl module usage</h2>
+					</a>
+					<p>Import the modules, instantiate them with their appropiate configuration, and load them:</p>
+					<pre><code class="language-ts"><span class="hljs-keyword">import</span> {
+  AccessControlTypes,
+  accessControlReduxModule,
+  entitiesReduxModule,
+  EntitiesTypes
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@uprtcl/common'</span>;
+
+<span class="hljs-keyword">await</span> orchestrator.loadModules(
+  { id: EntitiesTypes.Module, <span class="hljs-keyword">module</span>: entitiesReduxModule() },
+  { id: AccessControlTypes.Module, <span class="hljs-keyword">module</span>: accessControlReduxModule() }
+);</code></pre>
+					<a href="#drafts-and-access-control" id="drafts-and-access-control" style="color: inherit; text-decoration: none;">
+						<h2>Drafts and access control</h2>
+					</a>
+					<blockquote>
+						<p>Not yet ready</p>
+					</blockquote>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_uprtcl_common.permissiontype.html" class="tsd-kind-icon">Permission<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.accesscontrolmock.html" class="tsd-kind-icon">Access<wbr>Control<wbr>Mock</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.accesscontrolreduxmodule.html" class="tsd-kind-icon">Access<wbr>Control<wbr>Redux<wbr>Module</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.authreduxmodule.html" class="tsd-kind-icon">Auth<wbr>Redux<wbr>Module</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.cidhashedpattern.html" class="tsd-kind-icon">Cid<wbr>Hashed<wbr>Pattern</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.defaultsecuredpattern.html" class="tsd-kind-icon">Default<wbr>Secured<wbr>Pattern</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.defaultsignedpattern.html" class="tsd-kind-icon">Default<wbr>Signed<wbr>Pattern</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.draftsholochain.html" class="tsd-kind-icon">Drafts<wbr>Holochain</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.draftslocal.html" class="tsd-kind-icon">Drafts<wbr>Local</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.draftsservice.html" class="tsd-kind-icon">Drafts<wbr>Service</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.entitiesreduxmodule.html" class="tsd-kind-icon">Entities<wbr>Redux<wbr>Module</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.ownerpattern.html" class="tsd-kind-icon">Owner<wbr>Pattern</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_common.reduxcortexmodule.html" class="tsd-kind-icon">Redux<wbr>Cortex<wbr>Module</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/_uprtcl_common.accesscontrolservice.html" class="tsd-kind-icon">Access<wbr>Control<wbr>Service</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-kind-icon">Access<wbr>Control<wbr>State</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-kind-icon">Auth<wbr>State</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.basicadminaccesscontrol.html" class="tsd-kind-icon">Basic<wbr>Admin<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.basicadminaccesscontrolservice.html" class="tsd-kind-icon">Basic<wbr>Admin<wbr>Access<wbr>Control<wbr>Service</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.draftsprovider.html" class="tsd-kind-icon">Drafts<wbr>Provider</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-kind-icon">Entities<wbr>State</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.invitationaccesscontrol.html" class="tsd-kind-icon">Invitation<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.loadaccesscontrol.html" class="tsd-kind-icon">Load<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.loadaccesscontrolsuccess.html" class="tsd-kind-icon">Load<wbr>Access<wbr>Control<wbr>Success</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.loadentity.html" class="tsd-kind-icon">Load<wbr>Entity</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.loadentitysuccess.html" class="tsd-kind-icon">Load<wbr>Entity<wbr>Success</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.owneraccesscontrol.html" class="tsd-kind-icon">Owner<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.owneraccesscontrolservice.html" class="tsd-kind-icon">Owner<wbr>Access<wbr>Control<wbr>Service</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.permissions.html" class="tsd-kind-icon">Permissions</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/_uprtcl_common.updatable.html" class="tsd-kind-icon">Updatable</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_common.updateuplauth.html" class="tsd-kind-icon">Update<wbr>Upl<wbr>Auth</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_uprtcl_common.html#accesscontrolaction" class="tsd-kind-icon">Access<wbr>Control<wbr>Action</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_uprtcl_common.html#authaction" class="tsd-kind-icon">Auth<wbr>Action</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_uprtcl_common.html#entityactions" class="tsd-kind-icon">Entity<wbr>Actions</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter"><a href="_uprtcl_common.html#secured" class="tsd-kind-icon">Secured</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#load_access_control" class="tsd-kind-icon">LOAD_<wbr>ACCESS_<wbr>CONTROL</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#load_access_control_success" class="tsd-kind-icon">LOAD_<wbr>ACCESS_<wbr>CONTROL_<wbr>SUCCESS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#load_entity" class="tsd-kind-icon">LOAD_<wbr>ENTITY</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#load_entity_success" class="tsd-kind-icon">LOAD_<wbr>ENTITY_<wbr>SUCCESS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#update_upl_auth" class="tsd-kind-icon">UPDATE_<wbr>UPL_<wbr>AUTH</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#accesscontrolreducername" class="tsd-kind-icon">access<wbr>Control<wbr>Reducer<wbr>Name</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#authreducername" class="tsd-kind-icon">auth<wbr>Reducer<wbr>Name</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_uprtcl_common.html#entitiesreducername" class="tsd-kind-icon">entities<wbr>Reducer<wbr>Name</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_common.html#libraryname" class="tsd-kind-icon">library<wbr>Name</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_common.html#pkg" class="tsd-kind-icon">pkg</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#accesscontrolreducer" class="tsd-kind-icon">access<wbr>Control<wbr>Reducer</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#authreducer" class="tsd-kind-icon">auth<wbr>Reducer</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#draftsmodule" class="tsd-kind-icon">drafts<wbr>Module</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#entitiesreducer" class="tsd-kind-icon">entities<wbr>Reducer</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_common.html#filterupdatableentity" class="tsd-kind-icon">filter<wbr>Updatable<wbr>Entity</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_common.html#loadaccesscontrol-1" class="tsd-kind-icon">load<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#loadaccesscontrolonentityloadsaga" class="tsd-kind-icon">load<wbr>Access<wbr>Control<wbr>OnEntity<wbr>Load<wbr>Saga</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#loadaccesscontrolsaga" class="tsd-kind-icon">load<wbr>Access<wbr>Control<wbr>Saga</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_common.html#loadentity-1" class="tsd-kind-icon">load<wbr>Entity</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#loadentitysaga" class="tsd-kind-icon">load<wbr>Entity<wbr>Saga</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#recognizehashed" class="tsd-kind-icon">recognize<wbr>Hashed</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectaccesscontrol" class="tsd-kind-icon">select<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectall" class="tsd-kind-icon">select<wbr>All</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectauth" class="tsd-kind-icon">select<wbr>Auth</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectbyid" class="tsd-kind-icon">select<wbr>ById</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectbypattern" class="tsd-kind-icon">select<wbr>ByPattern</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectcanwrite" class="tsd-kind-icon">select<wbr>Can<wbr>Write</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectentities" class="tsd-kind-icon">select<wbr>Entities</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectentityaccesscontrol" class="tsd-kind-icon">select<wbr>Entity<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#selectuplauthinfo" class="tsd-kind-icon">select<wbr>Upl<wbr>Auth<wbr>Info</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_common.html#sortobject" class="tsd-kind-icon">sort<wbr>Object</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_common.html#accesscontroltypes" class="tsd-kind-icon">Access<wbr>Control<wbr>Types</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_common.html#authtypes" class="tsd-kind-icon">Auth<wbr>Types</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_common.html#draftstypes" class="tsd-kind-icon">Drafts<wbr>Types</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_common.html#entitiestypes" class="tsd-kind-icon">Entities<wbr>Types</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_common.html#initialstate" class="tsd-kind-icon">initial<wbr>State</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_common.html#initialstate-1" class="tsd-kind-icon">initial<wbr>State</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_common.html#initialstate-2" class="tsd-kind-icon">initial<wbr>State</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="accesscontrolaction" class="tsd-anchor"></a>
+					<h3>Access<wbr>Control<wbr>Action</h3>
+					<div class="tsd-signature tsd-kind-icon">Access<wbr>Control<wbr>Action<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_uprtcl_common.loadaccesscontrol.html" class="tsd-signature-type">LoadAccessControl</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_uprtcl_common.loadaccesscontrolsuccess.html" class="tsd-signature-type">LoadAccessControlSuccess</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.actions.ts#L19">packages/common/src/access-control/state/access-control.actions.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="authaction" class="tsd-anchor"></a>
+					<h3>Auth<wbr>Action</h3>
+					<div class="tsd-signature tsd-kind-icon">Auth<wbr>Action<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_uprtcl_common.updateuplauth.html" class="tsd-signature-type">UpdateUplAuth</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.actions.ts#L13">packages/common/src/auth/state/auth.actions.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="entityactions" class="tsd-anchor"></a>
+					<h3>Entity<wbr>Actions</h3>
+					<div class="tsd-signature tsd-kind-icon">Entity<wbr>Actions<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_uprtcl_common.loadentity.html" class="tsd-signature-type">LoadEntity</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_uprtcl_common.loadentitysuccess.html" class="tsd-signature-type">LoadEntitySuccess</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.actions.ts#L19">packages/common/src/entities/entities.actions.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="secured" class="tsd-anchor"></a>
+					<h3>Secured</h3>
+					<div class="tsd-signature tsd-kind-icon">Secured&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Hashed</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Signed</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/patterns/default-secured.pattern.ts#L13">packages/common/src/patterns/default-secured.pattern.ts:13</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="load_access_control" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> LOAD_<wbr>ACCESS_<wbr>CONTROL</h3>
+					<div class="tsd-signature tsd-kind-icon">LOAD_<wbr>ACCESS_<wbr>CONTROL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"[ACCESS-CONTROL] LOAD_ACCESS_CONTROL"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;[ACCESS-CONTROL] LOAD_ACCESS_CONTROL&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.actions.ts#L1">packages/common/src/access-control/state/access-control.actions.ts:1</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="load_access_control_success" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> LOAD_<wbr>ACCESS_<wbr>CONTROL_<wbr>SUCCESS</h3>
+					<div class="tsd-signature tsd-kind-icon">LOAD_<wbr>ACCESS_<wbr>CONTROL_<wbr>SUCCESS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"[ACCESS-CONTROL] LOAD_ACCESS_CONTROL_SUCCESS"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;[ACCESS-CONTROL] LOAD_ACCESS_CONTROL_SUCCESS&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.actions.ts#L2">packages/common/src/access-control/state/access-control.actions.ts:2</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="load_entity" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> LOAD_<wbr>ENTITY</h3>
+					<div class="tsd-signature tsd-kind-icon">LOAD_<wbr>ENTITY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"[ENTITIES] LOAD_ENTITY"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;[ENTITIES] LOAD_ENTITY&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.actions.ts#L1">packages/common/src/entities/entities.actions.ts:1</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="load_entity_success" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> LOAD_<wbr>ENTITY_<wbr>SUCCESS</h3>
+					<div class="tsd-signature tsd-kind-icon">LOAD_<wbr>ENTITY_<wbr>SUCCESS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"[ENTITIES] LOAD_ENTITY_SUCCESS"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;[ENTITIES] LOAD_ENTITY_SUCCESS&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.actions.ts#L2">packages/common/src/entities/entities.actions.ts:2</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="update_upl_auth" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> UPDATE_<wbr>UPL_<wbr>AUTH</h3>
+					<div class="tsd-signature tsd-kind-icon">UPDATE_<wbr>UPL_<wbr>AUTH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"[AUTH] UPDATE_UPL_AUTH"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;[AUTH] UPDATE_UPL_AUTH&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.actions.ts#L3">packages/common/src/auth/state/auth.actions.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="accesscontrolreducername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> access<wbr>Control<wbr>Reducer<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">access<wbr>Control<wbr>Reducer<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"access-control"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;access-control&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.selectors.ts#L8">packages/common/src/access-control/state/access-control.selectors.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="authreducername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> auth<wbr>Reducer<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">auth<wbr>Reducer<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"auth-reducer"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;auth-reducer&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.selectors.ts#L3">packages/common/src/auth/state/auth.selectors.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="entitiesreducername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> entities<wbr>Reducer<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">entities<wbr>Reducer<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"entities-reducer"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;entities-reducer&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.selectors.ts#L5">packages/common/src/entities/entities.selectors.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="libraryname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> library<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">library<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"uprtcl-common"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;uprtcl-common&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/rollup.config.ts#L13">packages/common/rollup.config.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="pkg" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> pkg</h3>
+					<div class="tsd-signature tsd-kind-icon">pkg<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;./package.json&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/rollup.config.ts#L8">packages/common/rollup.config.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="accesscontrolreducer" class="tsd-anchor"></a>
+					<h3>access<wbr>Control<wbr>Reducer</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">access<wbr>Control<wbr>Reducer<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-signature-type">AccessControlState</a>, action<span class="tsd-signature-symbol">: </span><a href="_uprtcl_common.html#accesscontrolaction" class="tsd-signature-type">AccessControlAction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-signature-type">AccessControlState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.reducer.ts#L12">packages/common/src/access-control/state/access-control.reducer.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> state: <a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-signature-type">AccessControlState</a><span class="tsd-signature-symbol"> =&nbsp;initialState</span></h5>
+								</li>
+								<li>
+									<h5>action: <a href="_uprtcl_common.html#accesscontrolaction" class="tsd-signature-type">AccessControlAction</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-signature-type">AccessControlState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="authreducer" class="tsd-anchor"></a>
+					<h3>auth<wbr>Reducer</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">auth<wbr>Reducer<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-signature-type">AuthState</a>, action<span class="tsd-signature-symbol">: </span><a href="_uprtcl_common.html#authaction" class="tsd-signature-type">AuthAction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-signature-type">AuthState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.reducer.ts#L14">packages/common/src/auth/state/auth.reducer.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> state: <a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-signature-type">AuthState</a><span class="tsd-signature-symbol"> =&nbsp;initialState</span></h5>
+								</li>
+								<li>
+									<h5>action: <a href="_uprtcl_common.html#authaction" class="tsd-signature-type">AuthAction</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-signature-type">AuthState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="draftsmodule" class="tsd-anchor"></a>
+					<h3>drafts<wbr>Module</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">drafts<wbr>Module<span class="tsd-signature-symbol">(</span>draftsProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.draftsprovider.html" class="tsd-signature-type">DraftsProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous class)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/draft/draft.module.ts#L8">packages/common/src/draft/draft.module.ts:8</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>draftsProvider: <a href="../interfaces/_uprtcl_common.draftsprovider.html" class="tsd-signature-type">DraftsProvider</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous class)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="entitiesreducer" class="tsd-anchor"></a>
+					<h3>entities<wbr>Reducer</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">entities<wbr>Reducer<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a>, action<span class="tsd-signature-symbol">: </span><a href="_uprtcl_common.html#entityactions" class="tsd-signature-type">EntityActions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.reducer.ts#L12">packages/common/src/entities/entities.reducer.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> state: <a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a><span class="tsd-signature-symbol"> =&nbsp;initialState</span></h5>
+								</li>
+								<li>
+									<h5>action: <a href="_uprtcl_common.html#entityactions" class="tsd-signature-type">EntityActions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="filterupdatableentity" class="tsd-anchor"></a>
+					<h3>filter<wbr>Updatable<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Updatable<wbr>Entity<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.loadentitysuccess.html" class="tsd-signature-type">LoadEntitySuccess</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"GET_CONTEXT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"PUT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PutEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_uprtcl_common.loadaccesscontrol.html" class="tsd-signature-type">LoadAccessControl</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.sagas.ts#L49">packages/common/src/access-control/state/access-control.sagas.ts:49</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>action: <a href="../interfaces/_uprtcl_common.loadentitysuccess.html" class="tsd-signature-type">LoadEntitySuccess</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"GET_CONTEXT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"PUT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PutEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_uprtcl_common.loadaccesscontrol.html" class="tsd-signature-type">LoadAccessControl</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="loadaccesscontrol-1" class="tsd-anchor"></a>
+					<h3>load<wbr>Access<wbr>Control</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Access<wbr>Control<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.loadaccesscontrol.html" class="tsd-signature-type">LoadAccessControl</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"GET_CONTEXT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CALL"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CallEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"PUT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PutEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_uprtcl_common.loadaccesscontrolsuccess.html" class="tsd-signature-type">LoadAccessControlSuccess</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.sagas.ts#L16">packages/common/src/access-control/state/access-control.sagas.ts:16</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>action: <a href="../interfaces/_uprtcl_common.loadaccesscontrol.html" class="tsd-signature-type">LoadAccessControl</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"GET_CONTEXT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CALL"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CallEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"PUT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PutEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_uprtcl_common.loadaccesscontrolsuccess.html" class="tsd-signature-type">LoadAccessControlSuccess</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="loadaccesscontrolonentityloadsaga" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> load<wbr>Access<wbr>Control<wbr>OnEntity<wbr>Load<wbr>Saga</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Access<wbr>Control<wbr>OnEntity<wbr>Load<wbr>Saga<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"FORK"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ForkEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.sagas.ts#L65">packages/common/src/access-control/state/access-control.sagas.ts:65</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"FORK"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ForkEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="loadaccesscontrolsaga" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> load<wbr>Access<wbr>Control<wbr>Saga</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Access<wbr>Control<wbr>Saga<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"FORK"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ForkEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.sagas.ts#L45">packages/common/src/access-control/state/access-control.sagas.ts:45</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"FORK"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ForkEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="loadentity-1" class="tsd-anchor"></a>
+					<h3>load<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Entity<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.loadentity.html" class="tsd-signature-type">LoadEntity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"GET_CONTEXT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CALL"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CallEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Hashed</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"PUT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PutEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.sagas.ts#L9">packages/common/src/entities/entities.sagas.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>action: <a href="../interfaces/_uprtcl_common.loadentity.html" class="tsd-signature-type">LoadEntity</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"GET_CONTEXT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CALL"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CallEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Hashed</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"PUT"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PutEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="loadentitysaga" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> load<wbr>Entity<wbr>Saga</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Entity<wbr>Saga<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"FORK"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ForkEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.sagas.ts#L20">packages/common/src/entities/entities.sagas.ts:20</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SimpleEffect</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"FORK"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ForkEffectDescriptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="recognizehashed" class="tsd-anchor"></a>
+					<h3>recognize<wbr>Hashed</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">recognize<wbr>Hashed<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/patterns/cid-hashed.pattern.ts#L10">packages/common/src/patterns/cid-hashed.pattern.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectaccesscontrol" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>Access<wbr>Control</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Access<wbr>Control<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-signature-type">AccessControlState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.selectors.ts#L10">packages/common/src/access-control/state/access-control.selectors.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-signature-type">AccessControlState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectall" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>All<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.selectors.ts#L9">packages/common/src/entities/entities.selectors.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectauth" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>Auth</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Auth<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-signature-type">AuthState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.selectors.ts#L5">packages/common/src/auth/state/auth.selectors.ts:5</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-signature-type">AuthState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectbyid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.selectors.ts#L14">packages/common/src/entities/entities.selectors.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectbypattern" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>ByPattern</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>ByPattern<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Pattern</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.selectors.ts#L16">packages/common/src/entities/entities.selectors.ts:16</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pattern: <span class="tsd-signature-type">Pattern</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectcanwrite" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>Can<wbr>Write</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Can<wbr>Write<span class="tsd-signature-symbol">(</span>recognizer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PatternRecognizer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.selectors.ts#L16">packages/common/src/access-control/state/access-control.selectors.ts:16</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>recognizer: <span class="tsd-signature-type">PatternRecognizer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectentities" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>Entities</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Entities<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.selectors.ts#L7">packages/common/src/entities/entities.selectors.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-signature-type">EntitiesState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectentityaccesscontrol" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>Entity<wbr>Access<wbr>Control</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Entity<wbr>Access<wbr>Control<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.selectors.ts#L13">packages/common/src/access-control/state/access-control.selectors.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="selectuplauthinfo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> select<wbr>Upl<wbr>Auth<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Upl<wbr>Auth<wbr>Info<span class="tsd-signature-symbol">(</span>upl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.selectors.ts#L7">packages/common/src/auth/state/auth.selectors.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>upl: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="sortobject" class="tsd-anchor"></a>
+					<h3>sort<wbr>Object</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sort<wbr>Object<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/utils/utils.ts#L1">packages/common/src/utils/utils.ts:1</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="accesscontroltypes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Access<wbr>Control<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">Access<wbr>Control<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/types.ts#L1">packages/common/src/types.ts:1</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="accesscontroltypes.module" class="tsd-anchor"></a>
+						<h3>Module</h3>
+						<div class="tsd-signature tsd-kind-icon">Module<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;access-control-module&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/types.ts#L2">packages/common/src/types.ts:2</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="accesscontroltypes.ownerpattern-1" class="tsd-anchor"></a>
+						<h3>Owner<wbr>Pattern</h3>
+						<div class="tsd-signature tsd-kind-icon">Owner<wbr>Pattern<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;owner-pattern&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/types.ts#L3">packages/common/src/types.ts:3</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="authtypes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Auth<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">Auth<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/types.ts#L6">packages/common/src/types.ts:6</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="authtypes.module-1" class="tsd-anchor"></a>
+						<h3>Module</h3>
+						<div class="tsd-signature tsd-kind-icon">Module<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;auth-module&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/types.ts#L7">packages/common/src/types.ts:7</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="draftstypes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Drafts<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">Drafts<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/draft/types.ts#L1">packages/common/src/draft/types.ts:1</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="draftstypes.drafts" class="tsd-anchor"></a>
+						<h3>Drafts</h3>
+						<div class="tsd-signature tsd-kind-icon">Drafts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;drafts-provider&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/draft/types.ts#L2">packages/common/src/draft/types.ts:2</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="entitiestypes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Entities<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">Entities<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/types.ts#L10">packages/common/src/types.ts:10</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="entitiestypes.module-2" class="tsd-anchor"></a>
+						<h3>Module</h3>
+						<div class="tsd-signature tsd-kind-icon">Module<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;entities-reducer-module&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/types.ts#L11">packages/common/src/types.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="initialstate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> initial<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">initial<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.reducer.ts#L10">packages/common/src/auth/state/auth.reducer.ts:10</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="initialstate.uplauthsinfo" class="tsd-anchor"></a>
+						<h3>upl<wbr>Auths<wbr>Info</h3>
+						<div class="tsd-signature tsd-kind-icon">upl<wbr>Auths<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/auth/state/auth.reducer.ts#L11">packages/common/src/auth/state/auth.reducer.ts:11</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-type-declaration">
+							<h4>Type declaration</h4>
+							<ul class="tsd-parameters">
+							</ul>
+						</div>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="initialstate-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> initial<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">initial<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.reducer.ts#L8">packages/common/src/entities/entities.reducer.ts:8</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="initialstate-1.entities" class="tsd-anchor"></a>
+						<h3>entities</h3>
+						<div class="tsd-signature tsd-kind-icon">entities<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/entities/entities.reducer.ts#L9">packages/common/src/entities/entities.reducer.ts:9</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-type-declaration">
+							<h4>Type declaration</h4>
+							<ul class="tsd-parameters">
+							</ul>
+						</div>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="initialstate-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> initial<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">initial<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.reducer.ts#L8">packages/common/src/access-control/state/access-control.reducer.ts:8</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="initialstate-2.accesscontrol" class="tsd-anchor"></a>
+						<h3>access<wbr>Control</h3>
+						<div class="tsd-signature tsd-kind-icon">access<wbr>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/packages/common/src/access-control/state/access-control.reducer.ts#L9">packages/common/src/access-control/state/access-control.reducer.ts:9</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-type-declaration">
+							<h4>Type declaration</h4>
+							<ul class="tsd-parameters">
+							</ul>
+						</div>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="_uprtcl_common.html">@uprtcl/common</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_connections.html">@uprtcl/connections</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_cortex.html">@uprtcl/cortex</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_documents.html">@uprtcl/documents</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_evees.html">@uprtcl/evees</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_lenses.html">@uprtcl/lenses</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_micro_orchestrator.html">@uprtcl/micro-<wbr>orchestrator</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_uprtcl_common.permissiontype.html" class="tsd-kind-icon">Permission<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.accesscontrolmock.html" class="tsd-kind-icon">Access<wbr>Control<wbr>Mock</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.accesscontrolreduxmodule.html" class="tsd-kind-icon">Access<wbr>Control<wbr>Redux<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.authreduxmodule.html" class="tsd-kind-icon">Auth<wbr>Redux<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.cidhashedpattern.html" class="tsd-kind-icon">Cid<wbr>Hashed<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.defaultsecuredpattern.html" class="tsd-kind-icon">Default<wbr>Secured<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.defaultsignedpattern.html" class="tsd-kind-icon">Default<wbr>Signed<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.draftsholochain.html" class="tsd-kind-icon">Drafts<wbr>Holochain</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.draftslocal.html" class="tsd-kind-icon">Drafts<wbr>Local</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.draftsservice.html" class="tsd-kind-icon">Drafts<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.entitiesreduxmodule.html" class="tsd-kind-icon">Entities<wbr>Redux<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.ownerpattern.html" class="tsd-kind-icon">Owner<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_common.reduxcortexmodule.html" class="tsd-kind-icon">Redux<wbr>Cortex<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/_uprtcl_common.accesscontrolservice.html" class="tsd-kind-icon">Access<wbr>Control<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.accesscontrolstate.html" class="tsd-kind-icon">Access<wbr>Control<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.authstate.html" class="tsd-kind-icon">Auth<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.basicadminaccesscontrol.html" class="tsd-kind-icon">Basic<wbr>Admin<wbr>Access<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.basicadminaccesscontrolservice.html" class="tsd-kind-icon">Basic<wbr>Admin<wbr>Access<wbr>Control<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.draftsprovider.html" class="tsd-kind-icon">Drafts<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.entitiesstate.html" class="tsd-kind-icon">Entities<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.invitationaccesscontrol.html" class="tsd-kind-icon">Invitation<wbr>Access<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.loadaccesscontrol.html" class="tsd-kind-icon">Load<wbr>Access<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.loadaccesscontrolsuccess.html" class="tsd-kind-icon">Load<wbr>Access<wbr>Control<wbr>Success</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.loadentity.html" class="tsd-kind-icon">Load<wbr>Entity</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.loadentitysuccess.html" class="tsd-kind-icon">Load<wbr>Entity<wbr>Success</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.owneraccesscontrol.html" class="tsd-kind-icon">Owner<wbr>Access<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.owneraccesscontrolservice.html" class="tsd-kind-icon">Owner<wbr>Access<wbr>Control<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.permissions.html" class="tsd-kind-icon">Permissions</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/_uprtcl_common.updatable.html" class="tsd-kind-icon">Updatable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_common.updateuplauth.html" class="tsd-kind-icon">Update<wbr>Upl<wbr>Auth</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#accesscontrolaction" class="tsd-kind-icon">Access<wbr>Control<wbr>Action</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#authaction" class="tsd-kind-icon">Auth<wbr>Action</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#entityactions" class="tsd-kind-icon">Entity<wbr>Actions</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_uprtcl_common.html#secured" class="tsd-kind-icon">Secured</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#load_access_control" class="tsd-kind-icon">LOAD_<wbr>ACCESS_<wbr>CONTROL</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#load_access_control_success" class="tsd-kind-icon">LOAD_<wbr>ACCESS_<wbr>CONTROL_<wbr>SUCCESS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#load_entity" class="tsd-kind-icon">LOAD_<wbr>ENTITY</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#load_entity_success" class="tsd-kind-icon">LOAD_<wbr>ENTITY_<wbr>SUCCESS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#update_upl_auth" class="tsd-kind-icon">UPDATE_<wbr>UPL_<wbr>AUTH</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#accesscontrolreducername" class="tsd-kind-icon">access<wbr>Control<wbr>Reducer<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#authreducername" class="tsd-kind-icon">auth<wbr>Reducer<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#entitiesreducername" class="tsd-kind-icon">entities<wbr>Reducer<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_common.html#libraryname" class="tsd-kind-icon">library<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_common.html#pkg" class="tsd-kind-icon">pkg</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#accesscontrolreducer" class="tsd-kind-icon">access<wbr>Control<wbr>Reducer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#authreducer" class="tsd-kind-icon">auth<wbr>Reducer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#draftsmodule" class="tsd-kind-icon">drafts<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#entitiesreducer" class="tsd-kind-icon">entities<wbr>Reducer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_common.html#filterupdatableentity" class="tsd-kind-icon">filter<wbr>Updatable<wbr>Entity</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_common.html#loadaccesscontrol-1" class="tsd-kind-icon">load<wbr>Access<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#loadaccesscontrolonentityloadsaga" class="tsd-kind-icon">load<wbr>Access<wbr>Control<wbr>OnEntity<wbr>Load<wbr>Saga</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#loadaccesscontrolsaga" class="tsd-kind-icon">load<wbr>Access<wbr>Control<wbr>Saga</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_common.html#loadentity-1" class="tsd-kind-icon">load<wbr>Entity</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#loadentitysaga" class="tsd-kind-icon">load<wbr>Entity<wbr>Saga</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#recognizehashed" class="tsd-kind-icon">recognize<wbr>Hashed</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectaccesscontrol" class="tsd-kind-icon">select<wbr>Access<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectall" class="tsd-kind-icon">select<wbr>All</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectauth" class="tsd-kind-icon">select<wbr>Auth</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectbyid" class="tsd-kind-icon">select<wbr>ById</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectbypattern" class="tsd-kind-icon">select<wbr>ByPattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectcanwrite" class="tsd-kind-icon">select<wbr>Can<wbr>Write</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectentities" class="tsd-kind-icon">select<wbr>Entities</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectentityaccesscontrol" class="tsd-kind-icon">select<wbr>Entity<wbr>Access<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#selectuplauthinfo" class="tsd-kind-icon">select<wbr>Upl<wbr>Auth<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#sortobject" class="tsd-kind-icon">sort<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#accesscontroltypes" class="tsd-kind-icon">Access<wbr>Control<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#authtypes" class="tsd-kind-icon">Auth<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#draftstypes" class="tsd-kind-icon">Drafts<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#entitiestypes" class="tsd-kind-icon">Entities<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#initialstate" class="tsd-kind-icon">initial<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#initialstate-1" class="tsd-kind-icon">initial<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_common.html#initialstate-2" class="tsd-kind-icon">initial<wbr>State</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@uprtcl/documents | js-uprtcl</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">js-uprtcl</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_uprtcl_documents.html">@uprtcl/documents</a>
+				</li>
+			</ul>
+			<h1>Module @uprtcl/documents</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<a href="#uprtcldocuments" id="uprtcldocuments" style="color: inherit; text-decoration: none;">
+						<h1>@uprtcl/documents</h1>
+					</a>
+					<blockquote>
+						<p>_Prtcl resources: <a href="https://github.com/uprtcl/spec/wiki">Overview</a>, <a href="https://github.com/uprtcl/spec">Spec</a>, <a href="https://github.com/uprtcl/js-uprtcl/wiki">Dev guide</a>, <a href="https://uprtcl.github.io/js-uprtcl/">API reference</a></p>
+					</blockquote>
+					<p>This cortex module implements patterns, services and lenses to interact with document-like objects.</p>
+					<blockquote>
+						<p>Note: this module is best used with <code>@uprtcl/common</code> and using the uprtcl module to handle updating the documents.</p>
+					</blockquote>
+					<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+						<h2>Dependencies</h2>
+					</a>
+					<p>This module depends on <code>@uprtcl/micro-orchestrator</code>, <code>@uprtcl/cortex</code> and <code>@uprtcl/connections</code>. It also depends on a redux module to be present.</p>
+					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+						<h2>Install</h2>
+					</a>
+					<pre><code class="language-bash">npm install @uprtcl/documents</code></pre>
+					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+						<h2>Usage</h2>
+					</a>
+					<p>Import the module, instantiate it with its appropiate configuration, and load it:</p>
+					<pre><code class="language-ts"><span class="hljs-keyword">import</span> { documentsModule, DocumentsIpfs, DocumentsTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">'@uprtcl/documents'</span>;
+
+<span class="hljs-keyword">const</span> documentsProvider = <span class="hljs-keyword">new</span> DocumentsIpfs({
+  host: <span class="hljs-string">'ipfs.infura.io'</span>,
+  port: <span class="hljs-number">5001</span>,
+  protocol: <span class="hljs-string">'https'</span>
+});
+
+<span class="hljs-keyword">const</span> docs = documentsModule([{ service: documentsProvider }]);
+<span class="hljs-keyword">await</span> orchestrator.loadModules({
+  id: DocumentsTypes.Module,
+  <span class="hljs-keyword">module</span>: docs
+});</code></pre>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_uprtcl_documents.datatype.html" class="tsd-kind-icon">Data<wbr>Type</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_uprtcl_documents.texttype.html" class="tsd-kind-icon">Text<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_documents.documents.html" class="tsd-kind-icon">Documents</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_documents.documentsholochain.html" class="tsd-kind-icon">Documents<wbr>Holochain</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_documents.documentshttp.html" class="tsd-kind-icon">Documents<wbr>Http</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_documents.documentsipfs.html" class="tsd-kind-icon">Documents<wbr>Ipfs</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_documents.documentslocal.html" class="tsd-kind-icon">Documents<wbr>Local</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_documents.textnodelens.html" class="tsd-kind-icon">Text<wbr>Node<wbr>Lens</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_uprtcl_documents.textnodepattern.html" class="tsd-kind-icon">Text<wbr>Node<wbr>Pattern</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_documents.documentsprovider.html" class="tsd-kind-icon">Documents<wbr>Provider</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_documents.documentsremote.html" class="tsd-kind-icon">Documents<wbr>Remote</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_uprtcl_documents.typedtext.html" class="tsd-kind-icon">Typed<wbr>Text</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_uprtcl_documents.html#documentslocal-1" class="tsd-kind-icon">Documents<wbr>Local</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_uprtcl_documents.html#textnode" class="tsd-kind-icon">Text<wbr>Node</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_documents.html#documents_api" class="tsd-kind-icon">documents_<wbr>api</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_documents.html#libraryname" class="tsd-kind-icon">library<wbr>Name</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_documents.html#pkg" class="tsd-kind-icon">pkg</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_uprtcl_documents.html#propertyorder" class="tsd-kind-icon">property<wbr>Order</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_uprtcl_documents.html#documentsmodule" class="tsd-kind-icon">documents<wbr>Module</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_uprtcl_documents.html#documentstypes" class="tsd-kind-icon">Documents<wbr>Types</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="documentslocal-1" class="tsd-anchor"></a>
+					<h3>Documents<wbr>Local</h3>
+					<div class="tsd-signature tsd-kind-icon">Documents<wbr>Local<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CacheService</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_uprtcl_documents.documentsprovider.html" class="tsd-signature-type">DocumentsProvider</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L26">modules/documents/src/types.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="textnode" class="tsd-anchor"></a>
+					<h3>Text<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">Text<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_uprtcl_documents.typedtext.html" class="tsd-signature-type">TypedText</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Node</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L16">modules/documents/src/types.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="documents_api" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> documents_<wbr>api</h3>
+					<div class="tsd-signature tsd-kind-icon">documents_<wbr>api<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;textnode-v1&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/services/providers/documents.http.ts#L14">modules/documents/src/services/providers/documents.http.ts:14</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="libraryname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> library<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">library<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"uprtcl-documents"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;uprtcl-documents&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/rollup.config.ts#L12">modules/documents/rollup.config.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="pkg" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> pkg</h3>
+					<div class="tsd-signature tsd-kind-icon">pkg<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;./package.json&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/rollup.config.ts#L8">modules/documents/rollup.config.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="propertyorder" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> property<wbr>Order</h3>
+					<div class="tsd-signature tsd-kind-icon">property<wbr>Order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;text&#x27;, &#x27;type&#x27;, &#x27;links&#x27;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/patterns/text-node.pattern.ts#L23">modules/documents/src/patterns/text-node.pattern.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="documentsmodule" class="tsd-anchor"></a>
+					<h3>documents<wbr>Module</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">documents<wbr>Module<span class="tsd-signature-symbol">(</span>documentsRemotes<span class="tsd-signature-symbol">: </span><a href="_uprtcl_cortex.html#discoverytypes.discoverablesource-1" class="tsd-signature-type">DiscoverableSource</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_uprtcl_documents.documentsremote.html" class="tsd-signature-type">DocumentsRemote</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, documentsLocal<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/documents.module.ts#L46">modules/documents/src/documents.module.ts:46</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Configure a documents module with the given providers</p>
+								</div>
+								<p>Depends on: lensesModule, PatternsModule, discoveryModule</p>
+								<p>Example usage:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">import</span> { IpfsConnection } <span class="hljs-keyword">from</span> <span class="hljs-string">'@uprtcl/connections'</span>;
+<span class="hljs-keyword">import</span> { documentsModule, DocumentsTypes, DocumentsIpfs } <span class="hljs-keyword">from</span> <span class="hljs-string">'@uprtcl/documents'</span>;
+
+<span class="hljs-keyword">const</span> ipfsConnection = <span class="hljs-keyword">new</span> IpfsConnection({
+  host: <span class="hljs-string">'ipfs.infura.io'</span>,
+  port: <span class="hljs-number">5001</span>,
+  protocol: <span class="hljs-string">'https'</span>
+});
+
+ <span class="hljs-keyword">const</span> documentsProvider = <span class="hljs-keyword">new</span> DocumentsIpfs(ipfsConnection);
+
+<span class="hljs-keyword">const</span> docs = documentsModule([{ service: documentsProvider }]);
+<span class="hljs-keyword">await</span> orchestrator.loadModules({
+  id: DocumentsTypes.Module,
+  <span class="hljs-keyword">module</span>: docs
+});</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>documentsRemotes: <a href="_uprtcl_cortex.html#discoverytypes.discoverablesource-1" class="tsd-signature-type">DiscoverableSource</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_uprtcl_documents.documentsremote.html" class="tsd-signature-type">DocumentsRemote</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> documentsLocal: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;DocumentsLocal</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the local cache service to</p>
+									</div>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<p>a configured documents module ready to be loaded</p>
+							<ul class="tsd-parameters">
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="documentstypes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Documents<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">Documents<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L18">modules/documents/src/types.ts:18</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="documentstypes.documents-1" class="tsd-anchor"></a>
+						<h3>Documents</h3>
+						<div class="tsd-signature tsd-kind-icon">Documents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;documents&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L23">modules/documents/src/types.ts:23</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="documentstypes.documentslocal-2" class="tsd-anchor"></a>
+						<h3>Documents<wbr>Local</h3>
+						<div class="tsd-signature tsd-kind-icon">Documents<wbr>Local<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;documents-local&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L21">modules/documents/src/types.ts:21</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="documentstypes.documentsremote-1" class="tsd-anchor"></a>
+						<h3>Documents<wbr>Remote</h3>
+						<div class="tsd-signature tsd-kind-icon">Documents<wbr>Remote<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;documents-remote&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L22">modules/documents/src/types.ts:22</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="documentstypes.module" class="tsd-anchor"></a>
+						<h3>Module</h3>
+						<div class="tsd-signature tsd-kind-icon">Module<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;documents-module&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L19">modules/documents/src/types.ts:19</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="documentstypes.textnodepattern-1" class="tsd-anchor"></a>
+						<h3>Text<wbr>Node<wbr>Pattern</h3>
+						<div class="tsd-signature tsd-kind-icon">Text<wbr>Node<wbr>Pattern<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;text-node-pattern&#x27;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/uprtcl/js-uprtcl//blob/ae71d66/modules/documents/src/types.ts#L20">modules/documents/src/types.ts:20</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_common.html">@uprtcl/common</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_connections.html">@uprtcl/connections</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_cortex.html">@uprtcl/cortex</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="_uprtcl_documents.html">@uprtcl/documents</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_evees.html">@uprtcl/evees</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_lenses.html">@uprtcl/lenses</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uprtcl_micro_orchestrator.html">@uprtcl/micro-<wbr>orchestrator</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_uprtcl_documents.datatype.html" class="tsd-kind-icon">Data<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_uprtcl_documents.texttype.html" class="tsd-kind-icon">Text<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_documents.documents.html" class="tsd-kind-icon">Documents</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_documents.documentsholochain.html" class="tsd-kind-icon">Documents<wbr>Holochain</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_documents.documentshttp.html" class="tsd-kind-icon">Documents<wbr>Http</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_documents.documentsipfs.html" class="tsd-kind-icon">Documents<wbr>Ipfs</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_documents.documentslocal.html" class="tsd-kind-icon">Documents<wbr>Local</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_documents.textnodelens.html" class="tsd-kind-icon">Text<wbr>Node<wbr>Lens</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_uprtcl_documents.textnodepattern.html" class="tsd-kind-icon">Text<wbr>Node<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_documents.documentsprovider.html" class="tsd-kind-icon">Documents<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_documents.documentsremote.html" class="tsd-kind-icon">Documents<wbr>Remote</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_uprtcl_documents.typedtext.html" class="tsd-kind-icon">Typed<wbr>Text</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_uprtcl_documents.html#documentslocal-1" class="tsd-kind-icon">Documents<wbr>Local</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_uprtcl_documents.html#textnode" class="tsd-kind-icon">Text<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_documents.html#documents_api" class="tsd-kind-icon">documents_<wbr>api</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_documents.html#libraryname" class="tsd-kind-icon">library<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_documents.html#pkg" class="tsd-kind-icon">pkg</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_uprtcl_documents.html#propertyorder" class="tsd-kind-icon">property<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_uprtcl_documents.html#documentsmodule" class="tsd-kind-icon">documents<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_uprtcl_documents.html#documentstypes" class="tsd-kind-icon">Documents<wbr>Types</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

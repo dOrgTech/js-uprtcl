@@ -1,4 +1,5 @@
-import { Hashed, CacheService } from '@uprtcl/cortex';
+import { CacheService } from '@uprtcl/cortex';
+import { PermissionsStatus } from '@uprtcl/common';
 
 import { EveesProvider } from './services/evees.provider';
 
@@ -48,3 +49,11 @@ export const EveesTypes = {
 };
 
 export type EveesLocal = CacheService & EveesProvider;
+
+export interface PerspectiveData {
+  id: string;
+  perspective: Perspective;
+  details: PerspectiveDetails;
+  permissions: PermissionsStatus;
+}
+

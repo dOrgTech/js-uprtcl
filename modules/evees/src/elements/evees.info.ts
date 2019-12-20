@@ -1,21 +1,21 @@
-import { Dictionary } from 'lodash';
 import { LitElement, property, html, css } from 'lit-element';
 
-import { reduxConnect } from '@uprtcl/micro-orchestrator';
-import { Hashed } from '@uprtcl/cortex';
-import { Secured, selectById } from '@uprtcl/common';
+import { Secured } from '@uprtcl/common';
+import { moduleConnect } from '@uprtcl/micro-orchestrator';
 
-import { Commit, Perspective, EveesTypes, PerspectiveDetails } from '../types';
-import { Evees } from '../services/evees';
 import { selectPerspectiveHeadId, selectEvees } from '../state/evees.selectors';
+import { Commit, Perspective } from '../types';
 
-export class Evee extends reduxConnect(LitElement) {
+export class Evee extends moduleConnect(LitElement) {
   
   @property({ type: Object })
   perspective!: Secured<Perspective>;
 
   @property({ attribute: false })
   commit!: Commit;
+
+  @property({ attribute: false })
+  show: Boolean = false;
 
   firstUpdated() {
     this.initialLoad();
@@ -31,21 +31,20 @@ export class Evee extends reduxConnect(LitElement) {
   render() {
     return html`
       <div>
-        <div class="evee-info">
-        </div>
-        <cortex-entitiy .hash=${this.commit.dataId}></cortex-entitiy>
+        <button class="button"></button>
+        ${this.show ? html`<div class="info-box"></div>` : ''}
       </div>
     `;
   }
 
   static get styles() {
     return css`
-      .column {
-        display: flex;
-        flex-direction: column;
+      .button {
+        width: 10px;
+        background-color: #9fc5e8ff;
       }
 
-      .row {
+      .info-box {
         display: flex;
         flex-direction: row;
       }

@@ -11,6 +11,7 @@ export class CortexEntity extends CortexEntityBase {
 
   renderSlotPlugins() {
     return html`
+      <slot></slot>
       <div slot="plugins" class="row center-content">
         ${Object.keys(this.slotPlugins).map(
           key => this.entity && this.slotPlugins[key].renderSlot(this.entity)

@@ -45,7 +45,8 @@ export class TextNodeLens extends LitElement {
   render() {
     return html`
       <div style="display: flex; flex-direction: row;">
-        <node-list .data=${this.data} lens="content" style="flex: 1;">
+        <div class="top-row">
+          <slot name="version-history"></slot>
           ${this.data.type === TextType.Paragraph
             ? html`
                 <div
@@ -63,9 +64,13 @@ export class TextNodeLens extends LitElement {
                   ${this.data.text}
                 </h3>
               `}
-        </node-list>
+        </div>
 
-        <slot name="plugins"></slot>
+        ${this.data.links.map(
+          link => html`
+            <cortex-entity .hash=${link} lens="content" context></cortex-entity>
+          `
+        )}
       </div>
     `;
   }

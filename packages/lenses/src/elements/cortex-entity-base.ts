@@ -46,7 +46,7 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
         getEntity(id: "${hash}", depth: 1) {
           id
           raw
-          isomorphisms {
+          entity {
             patterns {
               lenses {
                 name
@@ -60,16 +60,15 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
       `
     });
 
-    const lenses = flatMap(
-      result.data.getEntity.isomorphisms.reverse(),
-      iso => iso.patterns.lenses
-    ).filter(l => !!l);
+    const lenses = flatMap(result.data.getEntity.entity, entity => entity.patterns.lenses).filter(
+      l => !!l
+    );
 
     this.entity = result.data.getEntity.raw;
 
-    if(this.lens) {
+    if (this.lens) {
       this.selectedLens = lenses.find(lens => lens.type === this.lens);
-    } 
+    }
 
     if (this.selectedLens === undefined) {
       this.selectedLens = lenses[0];
@@ -91,13 +90,5 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
       (acc, next) => next.renderLens(acc, this.entity, this.selectedLens),
       initialLens
     );
-  }
-
-  updated(changedProperties: PropertyValues) {
-    super.updated(changedProperties);
-
-    if (changedProperties.has('hash') && this.hash && this.hash !== changedProperties.get('hash')) {
-      this.loadEntity(this.hash);
-    }
   }
 }

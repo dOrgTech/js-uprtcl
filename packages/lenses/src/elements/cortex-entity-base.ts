@@ -2,7 +2,7 @@ import { ApolloClient, gql } from 'apollo-boost';
 import { LitElement, property, PropertyValues, TemplateResult } from 'lit-element';
 import { flatMap } from 'lodash-es';
 
-import { moduleConnect, Dictionary } from '@uprtcl/micro-orchestrator';
+import { moduleConnect, Dictionary, Logger } from '@uprtcl/micro-orchestrator';
 import { GraphQlTypes } from '@uprtcl/common';
 import { Hashed } from '@uprtcl/cortex';
 
@@ -11,6 +11,9 @@ import { SlotPlugin } from '../plugins/slot.plugin';
 import { RenderLensPlugin } from '../plugins/render-lens.plugin';
 
 export class CortexEntityBase extends moduleConnect(LitElement) {
+  
+  logger = new Logger('CORTEX-ENTITY-BASE');
+
   @property()
   public hash!: string;
 
@@ -73,6 +76,8 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
     if (this.selectedLens === undefined) {
       this.selectedLens = lenses[0];
     }
+
+    this.logger.info(`Lens selected for entity ${this.hash}`, this.selectedLens)
   }
 
   get slotPlugins(): Dictionary<SlotPlugin> {

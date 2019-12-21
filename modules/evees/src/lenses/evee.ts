@@ -48,7 +48,7 @@ export class Evee extends moduleConnect(LitElement) {
   }
   
   render() {
-    console.log(`[EVEE-LENS] render() `)
+    console.log(`[EVEE-LENS] render() `, { dataId: this.dataId, perspectiveId:this.perspective.id })
     return html`
       ${!this.dataId
         ? this.renderLoadingPlaceholder()

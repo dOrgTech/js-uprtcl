@@ -1,27 +1,35 @@
 import { LitElement, property, html, css } from 'lit-element';
 import { ApolloClient, gql } from 'apollo-boost';
 
-import { Secured, GraphQlTypes } from '@uprtcl/common';
+import { GraphQlTypes, Secured } from '@uprtcl/common';
 import { moduleConnect } from '@uprtcl/micro-orchestrator';
-  
+
+import { Perspective } from '../types';
+
 export class Evee extends moduleConnect(LitElement) {
   @property({ type: Object })
-  perspectiveId!: string;
+  perspective!: Secured<Perspective>;
 
   @property({ attribute: false })
-  show: Boolean = false;
+  dataId!: String;
 
   firstUpdated() {
-    this.addEventListener('checkout-perspective', this.checkout)
+    console.log('[EVEE-LENS] firstUpdated()', this.perspective);
+    this.load();
+  }
+
+  updated() {
+    console.log('[EVEE-LENS] updated()', this.perspective);
+    this.load();
   }
 
   async load() {
-
-    const data = getPerspectiveData(this.request(GraphQlTypes.Client), this.perspectiveId);
+    if (!this.perspective) return;
+    
     const client: ApolloClient<any> = this.request(GraphQlTypes.Client);
     const result = await client.query({
       query: gql`{
-        getEntity(id: "${this.perspectiveId}") {
+        getEntity(id: "${this.perspective.id}") {
           id
           content {
             id
@@ -29,41 +37,33 @@ export class Evee extends moduleConnect(LitElement) {
         }
       }`
     });
-    console.log(result);
-    const { text } = result.data.getEntity.content.entity;
-    this.title = text ? text : 'Title goes here';
+    console.log('[EVEE-LENS] load()', result);
+    this.dataId = result.data.getEntity.content.id;
   }
-  
-  buttonClick() {
-    this.load();
-    this.show = true;
-  }
-  
-  checkout() {
-    
+
+  renderLoadingPlaceholder() {
+    return html`
+      loading data ...<mwc-circular-progress></mwc-circular-progress> 
+    `;
   }
   
   render() {
+    console.log(`[EVEE-LENS] render() `)
     return html`
-      <div>
+      ${!this.dataId
+        ? this.renderLoadingPlaceholder()
+        : html`
+            <div>
         <cortex-entity .hash=${this.dataId} lens="content">
-          <evee-info slot="version-control" isOriginal perspectiveId=${this.perspectiveId ? "color:auto" : ''}></evee-info>
+          <evee-info slot="version-control" perspectiveId=${this.perspective.id}></evee-info>
         </cortex-entity> 
       </div>
+          `}
     `;
   }
 
   static get styles() {
     return css`
-      .button {
-        width: 10px;
-        background-color: #9fc5e8ff;
-      }
-
-      .info-box {
-        display: flex;
-        flex-direction: row;
-      }
     `;
   }
 }

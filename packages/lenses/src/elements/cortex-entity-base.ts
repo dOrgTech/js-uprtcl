@@ -60,7 +60,7 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
       `
     });
 
-    const lenses = flatMap(result.data.getEntity.entity, entity => entity.patterns.lenses).filter(
+    const lenses = flatMap(result.data.getEntity.entity, entity => entity.lenses).filter(
       l => !!l
     );
 
@@ -90,5 +90,13 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
       (acc, next) => next.renderLens(acc, this.entity, this.selectedLens),
       initialLens
     );
+  }
+
+  updated(changedProperties: PropertyValues) {
+    super.updated(changedProperties);
+
+    if (changedProperties.has('hash') && this.hash && this.hash !== changedProperties.get('hash')) {
+      this.loadEntity(this.hash);
+    }
   }
 }

@@ -2,10 +2,10 @@ import { ApolloClient, gql } from 'apollo-boost';
 import { LitElement, property, html, css } from 'lit-element';
 
 import { CortexTypes, PatternRecognizer } from '@uprtcl/cortex';
-import { GraphQlTypes } from '@uprtcl/common';
+import { GraphQlTypes, PermissionsStatus } from '@uprtcl/common';
 import { moduleConnect } from '@uprtcl/micro-orchestrator';
 
-import { PerspectiveDetails } from '../types';
+import { PerspectiveDetails, PerspectiveData } from '../types';
 
 export class PerspectivesList extends moduleConnect(LitElement) {
   @property({ type: String })

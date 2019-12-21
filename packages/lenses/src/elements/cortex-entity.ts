@@ -42,12 +42,13 @@ export class CortexEntity extends CortexEntityBase {
 
   renderLoadingPlaceholder() {
     return html`
-      <mwc-circular-progress></mwc-circular-progress>
+      loading lens ...<mwc-circular-progress></mwc-circular-progress> 
     `;
   }
 
 
   render() {
+    console.log(`[CORTEX-ENTITY] render() `, { hash: this.hash, lens: this.lens, selectedLens: this.selectedLens })
     return html`
       ${!this.selectedLens
         ? this.renderLoadingPlaceholder()

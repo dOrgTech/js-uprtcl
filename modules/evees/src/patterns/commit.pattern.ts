@@ -8,10 +8,7 @@ import {
   HasLinks,
   Creatable,
   Signed,
-  PatternRecognizer,
   CortexTypes,
-  DiscoveryTypes,
-  DiscoveryService,
   Entity
 } from '@uprtcl/cortex';
 import { Secured } from '@uprtcl/common';

@@ -17,7 +17,7 @@ import {
   AccessControlTypes
 } from '@uprtcl/common';
 
-import { PerspectiveLinks } from './patterns/perspective.pattern';
+import { PerspectiveLinks, PerspectiveLens } from './patterns/perspective.pattern';
 import { CommitPattern, CommitLens, CommitLinked } from './patterns/commit.pattern';
 import { CommitHistory } from './lenses/evee-commit-history';
 import { EveesTypes, EveesLocal } from './types';
@@ -29,6 +29,8 @@ import { RecursiveContextMergeStrategy } from './merge/recursive-context.merge-s
 
 import en from '../i18n/en.json';
 import { PerspectivesList } from './lenses/perspectives-list';
+import { Evee } from './lenses/evee';
+import { EveeInfo } from './elements/evees.info';
 
 /**
  * Configure a _Prtcl Evees module with the given service providers
@@ -93,14 +95,16 @@ export function eveesModule(
       graphQlSchemaModule(eveesTypeDefs, eveesResolvers),
       elementsModule({ 
         'evee-commit-history': CommitHistory,
-        'evee-perspectives-list': PerspectivesList 
+        'evee-perspectives-list': PerspectivesList,
+        'evee-x': Evee,
+        'evee-info': EveeInfo  
       }),
       i18nModule('evees', { en: en }),
       patternsModule({
         [CortexTypes.Core.Hashed]: [CidHashedPattern],
         [CortexTypes.Core.Signed]: [DefaultSignedPattern],
         [CortexTypes.Core.Secured]: [DefaultSecuredPattern],
-        [EveesTypes.PerspectivePattern]: [PerspectiveLinks],
+        [EveesTypes.PerspectivePattern]: [PerspectiveLinks, PerspectiveLens],
         [EveesTypes.CommitPattern]: [CommitLinked, CommitPattern, CommitLens]
       }),
       sourcesModule(

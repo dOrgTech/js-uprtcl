@@ -1,3 +1,4 @@
+import { TemplateResult, html } from 'lit-element';
 import { injectable, inject } from 'inversify';
 
 import {
@@ -15,6 +16,9 @@ import {
   Entity
 } from '@uprtcl/cortex';
 import { Secured } from '@uprtcl/common';
+
+import { Lens, HasLenses } from '@uprtcl/lenses';
+import { i18nTypes } from '@uprtcl/micro-orchestrator';
 
 import { Perspective, EveesTypes, Commit, UpdateRequest } from '../types';
 import { Evees, NewPerspectiveArgs } from '../services/evees';
@@ -38,6 +42,31 @@ export class PerspectiveEntity implements Entity {
   }
 
   name = 'Perspective';
+}
+
+@injectable()
+export class PerspectiveLens extends PerspectiveEntity implements HasLenses {
+  constructor(
+    @inject(CortexTypes.Core.Secured)
+    protected securedPattern: Pattern & IsSecure<Secured<Perspective>>,
+    @inject(i18nTypes.Translate) protected t: (key: string) => string
+  ) {
+    super(securedPattern);
+  }
+
+  lenses: (perspective: Secured<Perspective>) => Lens[] = (
+    perspective: Secured<Perspective>
+  ): Lens[] => {
+    return [
+      {
+        name: this.t('evees:evee'),
+        type: 'evee',
+        render: (lensContent: TemplateResult) => html`
+          <evee-x .perspective=${perspective}>${lensContent}</evee-x>
+        `
+      }
+    ];
+  };
 }
 
 @injectable()

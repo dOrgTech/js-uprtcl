@@ -31,6 +31,7 @@ export class EveeInfo extends moduleConnect(LitElement) {
     return css`
       .button {
         width: 10px;
+        min-height: 20px;
         background-color: #9fc5e8ff;
       }
     `;

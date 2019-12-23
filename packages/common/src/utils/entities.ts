@@ -3,6 +3,8 @@ import { ApolloClient, gql } from 'apollo-boost';
 import { PatternRecognizer, HasRedirect, Pattern, Transformable } from '@uprtcl/cortex';
 
 export async function loadEntity(client: ApolloClient<any>, hash: string): Promise<any> {
+  if (!hash) throw new Error(`Hash undefined while loading entity`);
+  
   const result = await client.query({
     query: gql`
     {

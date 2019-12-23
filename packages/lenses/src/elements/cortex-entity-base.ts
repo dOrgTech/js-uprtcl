@@ -49,7 +49,7 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
         getEntity(id: "${hash}", depth: 1) {
           id
           raw
-          entity {
+          isomorphisms {
             patterns {
               lenses {
                 name
@@ -63,9 +63,10 @@ export class CortexEntityBase extends moduleConnect(LitElement) {
       `
     });
 
-    const lenses = flatMap(result.data.getEntity.entity, entity => entity.lenses).filter(
-      l => !!l
-    );
+    const lenses = flatMap(
+      result.data.getEntity.isomorphisms.reverse(),
+      iso => iso.patterns.lenses
+    ).filter(l => !!l);
 
     this.entity = result.data.getEntity.raw;
 

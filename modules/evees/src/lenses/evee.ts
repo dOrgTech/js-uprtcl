@@ -25,7 +25,7 @@ export class Evee extends moduleConnect(LitElement) {
 
   async load() {
     if (!this.perspective) return;
-    
+
     const client: ApolloClient<any> = this.request(GraphQlTypes.Client);
     const result = await client.query({
       query: gql`{
@@ -37,33 +37,35 @@ export class Evee extends moduleConnect(LitElement) {
         }
       }`
     });
-    console.log('[EVEE-LENS] load()', result);
+    console.log('[EVEE-LENS] load()', { perspective: this.perspective, result: result });
     this.dataId = result.data.getEntity.content.id;
   }
 
   renderLoadingPlaceholder() {
     return html`
-      loading data ...<mwc-circular-progress></mwc-circular-progress> 
+      loading data ...<mwc-circular-progress></mwc-circular-progress>
     `;
   }
-  
+
   render() {
-    console.log(`[EVEE-LENS] render() `, { dataId: this.dataId, perspectiveId:this.perspective.id })
+    console.log(`[EVEE-LENS] render() `, {
+      dataId: this.dataId,
+      perspectiveId: this.perspective.id
+    });
     return html`
       ${!this.dataId
         ? this.renderLoadingPlaceholder()
         : html`
-            <div>
-        <cortex-entity .hash=${this.dataId} lens="content">
-          <evee-info slot="version-control" perspectiveId=${this.perspective.id}></evee-info>
-        </cortex-entity> 
-      </div>
+            <div class="evee">
+              <cortex-entity .hash=${this.dataId} lens="content">
+                <evee-info slot="version-control" perspectiveId=${this.perspective.id}></evee-info>
+              </cortex-entity>
+            </div>
           `}
     `;
   }
 
   static get styles() {
-    return css`
-    `;
+    return css``;
   }
 }

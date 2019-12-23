@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html, PropertyValues } from 'lit-element';
 import '@authentic/mwc-circular-progress';
 
 import { CortexEntityBase } from './cortex-entity-base';
@@ -9,9 +9,23 @@ export class CortexEntity extends CortexEntityBase {
     return sharedStyles;
   }
 
+  updated(changedProperties: PropertyValues) {
+    super.updated(changedProperties);
+    this.getSlots();
+  }
+
+  getSlots() {
+    if (!this.shadowRoot) return;
+    const slot : HTMLSlotElement | null = this.shadowRoot.getElementById('slot') as HTMLSlotElement;
+    if (!slot) return;
+
+    const nodes = slot.assignedNodes();
+    console.log('CORTEX-ENTITY', nodes);
+  }
+
   renderSlotPlugins() {
     return html`
-      <slot></slot>
+      <slot name="version-control" slot="version-control"></slot>
       <div slot="plugins" class="row center-content">
         ${Object.keys(this.slotPlugins).map(
           key => this.entity && this.slotPlugins[key].renderSlot(this.entity)

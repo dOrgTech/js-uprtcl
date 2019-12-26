@@ -1,4 +1,4 @@
-import { LitElement, property, html } from 'lit-element';
+import { LitElement, property, html, css } from 'lit-element';
 
 import { TextNode, TextType } from '../types';
 
@@ -44,35 +44,59 @@ export class TextNodeLens extends LitElement {
 
   render() {
     return html`
-      <div style="display: flex; flex-direction: row;">
+      <div class="container">
         <div class="top-row">
-          <slot name="version-control"></slot>
-          <slot name="plugins"></slot>
-          ${this.data.type === TextType.Paragraph
-            ? html`
-                <div
-                  contenteditable=${this.editable ? 'true' : 'false'}
-                  @input=${e => e.target && this.textInput(e.target['innerText'])}
-                >
-                  ${this.data.text}
-                </div>
-              `
-            : html`
-                <h3
-                  contenteditable=${this.editable ? 'true' : 'false'}
-                  @input=${e => e.target && this.textInput(e.target['innerText'])}
-                >
-                  ${this.data.text}
-                </h3>
-              `}
-        </div>
+          <div class="version-control">
+            <slot name="version-control"></slot>
+          </div>
 
-        ${this.data.links.map(
-          link => html`
-            <cortex-entity .hash=${link} lens="evee" context></cortex-entity>
-          `
-        )}
+          <div class="content">
+            ${this.data.type === TextType.Paragraph
+              ? html`
+                  <div
+                    contenteditable=${this.editable ? 'true' : 'false'}
+                    @input=${e => e.target && this.textInput(e.target['innerText'])}
+                  >
+                    ${this.data.text}
+                  </div>
+                `
+              : html`
+                  <h3
+                    contenteditable=${this.editable ? 'true' : 'false'}
+                    @input=${e => e.target && this.textInput(e.target['innerText'])}
+                  >
+                    ${this.data.text}
+                  </h3>
+                `}
+          </div>
+
+          <div class="plugins">
+            <slot name="plugins"></slot>
+          </div>
+
+        </div>
+        <div class="children-row">
+          ${this.data.links.map(
+            link => html`
+              <cortex-entity .hash=${link} lens="evee" context></cortex-entity>
+            `
+          )}
+        </div>
       </div>
+    `;
+  }
+
+  static get styles() {
+    return css`
+      .top-row {
+        display: flex;
+        flex-direction: row;
+        min-height: 1.5rem;
+      }
+
+      .children-row {
+        width: 100%;
+      }
     `;
   }
 

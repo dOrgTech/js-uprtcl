@@ -19,25 +19,26 @@ export class WikiPage extends moduleConnect(LitElement) {
             entity {
               ... on TextNode {
                 text
+                links
               }
             }
           }
         }
       }`
     });
-    console.log(result)
-    const { text } = result.data.getEntity.content.entity
-    this.title = text ? text : "Title goes here"
+    console.log(result);
+    const pageNode = result.data.getEntity.content.entity;
+    this.title = pageNode.text ? pageNode.text : 'Title goes here';
   }
 
   render() {
     return html`
       <div class="header">
-        <div class="page">
-          <h3> ${this.title} </h3>
+        <div class="version-control">
+          <evee-info perspectiveId=${this.pageHash}></evee-info>
         </div>
-        <div class="actions">
-          <cortex-actions .hash=${this.pageHash} />
+        <div class="page">
+          <h3>${this.title}</h3>
         </div>
       </div>
       <cortex-entity .hash=${this.pageHash} lens="evee"> </cortex-entity>
@@ -49,19 +50,11 @@ export class WikiPage extends moduleConnect(LitElement) {
       .header {
         display: flex;
         flex-direction: row;
-        background-color: #fff;
       }
       .page {
-        width: 90%;
         text-align: left;
-        border-style: solid;
-        border-width: 2px;
       }
       .actions {
-        width: 10%;
-        border-style: solid;
-        border-width: 2px;
-        border-left-width: 0px;
       }
     `;
   }

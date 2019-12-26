@@ -141,7 +141,7 @@ export class WikiNodeLens extends moduleConnect(LitElement) {
   render() {
     return html`
       <div class="row">
-        <div class="column left" style="background-color:#aaa;">
+        <div class="column left">
           ${this.wikiHeader()}
           <ul>
             ${this.pagesList.map(page => {
@@ -155,7 +155,7 @@ export class WikiNodeLens extends moduleConnect(LitElement) {
             New page
           </mwc-button>
         </div>
-        <div class="column right" style="background-color:#bbb;">
+        <div class="column right">
           <p>
             ${this.selectedPageHash
               ? html`
@@ -187,26 +187,18 @@ export class WikiNodeLens extends moduleConnect(LitElement) {
       }
       .left {
         width: 25%;
+        background-color: #3498db;
+        color: white;
       }
       .right {
         width: 75%;
       }
-      .row:after {
-        content: '';
-        display: table;
-        clear: both;
-      }
       .header {
         display: flex;
         flex-direction: row;
-        background-color: #bbb;
       }
       .wiki-title {
         width: 100%;
-        border-style: solid;
-        border-width: 2px;
-        float: left;
-        background-color: #fff;
       }
     `;
   }

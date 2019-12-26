@@ -1,4 +1,4 @@
-import { html, PropertyValues } from 'lit-element';
+import { html, PropertyValues, TemplateResult } from 'lit-element';
 import '@authentic/mwc-circular-progress';
 
 import { CortexEntityBase } from './cortex-entity-base';
@@ -11,21 +11,25 @@ export class CortexEntity extends CortexEntityBase {
 
   updated(changedProperties: PropertyValues) {
     super.updated(changedProperties);
-    this.getSlots();
   }
 
-  getSlots() {
-    if (!this.shadowRoot) return;
-    const slot : HTMLSlotElement | null = this.shadowRoot.getElementById('slot') as HTMLSlotElement;
-    if (!slot) return;
+  forwardSlots():TemplateResult[] {
+    let slots:TemplateResult[] = [];
 
-    const nodes = slot.assignedNodes();
-    console.log('CORTEX-ENTITY', nodes);
+    for (const el of this.children) {
+      const slotName = el.getAttribute('slot');
+      if (slotName) {
+        slots.push(html`<slot name=${slotName} slot=${slotName}></slot>`);
+      }
+    }
+
+    console.log('[CORTEX-ENTITY] forwardSlots()', slots);
+    return slots;
   }
 
   renderSlotPlugins() {
     return html`
-      <slot name="version-control" slot="version-control"></slot>
+      ${this.forwardSlots()}
       <div slot="plugins" class="row center-content">
         ${Object.keys(this.slotPlugins).map(
           key => this.entity && this.slotPlugins[key].renderSlot(this.entity)
@@ -47,7 +51,7 @@ export class CortexEntity extends CortexEntityBase {
   renderLens() {
     if (!this.selectedLens) return html``;
 
-    const lens =  html`
+    const lens = html`
       <div id="lens-element">${this.selectedLens.render(this.renderSlotPlugins())}</div>
     `;
 
@@ -56,13 +60,16 @@ export class CortexEntity extends CortexEntityBase {
 
   renderLoadingPlaceholder() {
     return html`
-      loading lens ...<mwc-circular-progress></mwc-circular-progress> 
+      loading lens ...<mwc-circular-progress></mwc-circular-progress>
     `;
   }
 
-
   render() {
-    console.log(`[CORTEX-ENTITY] render() `, { hash: this.hash, lens: this.lens, selectedLens: this.selectedLens })
+    console.log(`[CORTEX-ENTITY] render() `, {
+      hash: this.hash,
+      lens: this.lens,
+      selectedLens: this.selectedLens
+    });
     return html`
       ${!this.selectedLens
         ? this.renderLoadingPlaceholder()

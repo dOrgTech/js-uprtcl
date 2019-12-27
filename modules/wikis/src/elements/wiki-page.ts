@@ -15,11 +15,12 @@ export class WikiPage extends moduleConnect(LitElement) {
     const result = await client.query({
       query: gql`{
         getEntity(id: "${this.pageHash}") {
+          id
           content {
+            id
             entity {
               ... on TextNode {
                 text
-                links
               }
             }
           }

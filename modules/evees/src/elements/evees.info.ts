@@ -3,22 +3,32 @@ import { LitElement, property, html, css } from 'lit-element';
 import { moduleConnect } from '@uprtcl/micro-orchestrator';
 import { ApolloClient } from 'apollo-boost';
 import { GraphQlTypes } from '@uprtcl/common';
-import { getPerspectiveDetails } from 'src/graphql.queries';
-import { PerspectiveDetails } from 'src/types';
+import { getPerspectiveData } from '../graphql.queries';
+import { PerspectiveData } from '../types';
 
 export class EveeInfo extends moduleConnect(LitElement) {
-  
   @property({ type: String })
   perspectiveId!: string;
 
   @property({ attribute: false })
   show: Boolean = false;
 
-  @property({ attribute: false })
-  perspectiveDetails!: PerspectiveDetails;
+  perspectiveData!: PerspectiveData;
 
   firstUpdated() {
     this.load();
+  }
+
+  infoBoxId():string {
+    return `info-box-${this.perspectiveId}`
+  }
+
+  documentClick(event) {
+    console.log('[EVEE-INDO] documentClick', event);
+    if (this.contains(event.target) && event.target.closest(`#${this.infoBoxId}`) === null) {
+      this.show = false;
+      document.removeEventListener('click', this.documentClick);
+    }
   }
 
   updated() {
@@ -27,20 +37,38 @@ export class EveeInfo extends moduleConnect(LitElement) {
 
   async load() {
     const client: ApolloClient<any> = this.request(GraphQlTypes.Client);
-    this.perspectiveDetails = await getPerspectiveDetails(client, this.perspectiveId);
+    this.perspectiveData = await getPerspectiveData(client, this.perspectiveId);
 
-    console.log('[EVEE-INFO] load', {perspectiveId: this.perspectiveId});
+    console.log('[EVEE-INFO] load', { perspectiveData: this.perspectiveData });
   }
 
   showClicked() {
-    this.show = !this.show;
+    this.show = true;
+    document.addEventListener('click', this.documentClick);
+  }
+
+  renderLoading() {
+    return html`
+      loading perspective data ...<mwc-circular-progress></mwc-circular-progress>
+    `;
   }
 
   render() {
     return html`
       <div class="container">
         <div class="button" @click=${this.showClicked}></div>
-        ${this.show ? html`<div class="info-box"></div>` : ''}
+        ${this.show
+          ? html`
+              <div id=${this.infoBoxId()} class="info-box">
+                ${this.perspectiveData
+                  ? html`
+                      name: ${this.perspectiveData.details.name} origin:
+                      ${this.perspectiveData.perspective.origin}
+                    `
+                  : this.renderLoading()}
+              </div>
+            `
+          : ''}
       </div>
     `;
   }

@@ -1,11 +1,11 @@
 import { ApolloClient, gql } from 'apollo-boost';
 import { PermissionsStatus } from '@uprtcl/common';
-import { PerspectiveDetails } from './types';
+import { PerspectiveDetails, PerspectiveData } from './types';
 
-export const getPerspectiveDetails = async (
+export const getPerspectiveData = async (
   client: ApolloClient<any>,
   perspectiveId: string
-): Promise<PerspectiveDetails> => {
+): Promise<PerspectiveData> => {
   const result = await client.query({
     query: gql`{
       getEntity(id: "${perspectiveId}") {
@@ -13,7 +13,7 @@ export const getPerspectiveDetails = async (
         entity {
           ... on Perspective {
             name
-            head
+            head 
             context {
               identifier
             }
@@ -23,21 +23,23 @@ export const getPerspectiveDetails = async (
               timestamp
             }
           }
-        } 
+        }
       }
     }`
   });
 
-  const { perspective } = result.data.getEntity.entity;
-  const { head, context, name, payload } = perspective.entity;
+  const { head, context, name, payload } = result.data.getEntity.entity;
+  
   const permissions: PermissionsStatus = {
     canWrite: false
   };
+
   const details: PerspectiveDetails = {
     headId: head,
     context: context.identifier,
     name
   };
+
   return {
     id: perspectiveId,
     details,

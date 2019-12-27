@@ -54,6 +54,7 @@ export class CortexUpdatable extends moduleConnect(LitElement) {
       query: gql`
         {
           getEntity(id: "${this.entity.id}") {
+            id
             entity {
               patterns {
                 accessControl {
